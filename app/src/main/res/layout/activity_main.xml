@@ -24,11 +24,12 @@
             android:layout_height="wrap_content"
             android:text="Name:"
             android:layout_weight="0.25"
-            android:textSize="18sp"/>
+            android:textSize="20sp"/>
         <EditText
             android:id="@+id/et_main_name"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
             android:layout_weight="0.75"
             android:inputType="text"
             android:hint="Enter name"
@@ -52,14 +53,15 @@
             android:layout_height="wrap_content"
             android:text="Email:"
             android:layout_weight="0.25"
-            android:textSize="18sp"/>
+            android:textSize="20sp"/>
         <EditText
             android:id="@+id/et_main_email"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.75"
             android:inputType="textEmailAddress"
             android:hint="Enter email"
+            android:textSize="18sp"
             android:importantForAutofill="no"/>
     </LinearLayout>
 
