@@ -1,5 +1,6 @@
 package com.fangs.employee_management_app
 
+import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
@@ -31,5 +32,19 @@ class DatabaseHandler(context : Context) : SQLiteOpenHelper(context, DATABASE_NA
     }
 
 
+    fun addEmployee(employee : EmployeeModel) : Long {
+
+        val db = this.writableDatabase
+        val contentValue = ContentValues()
+        contentValue.put(KEY_NAME, employee.name)
+        contentValue.put(KEY_EMAIL, employee.email)
+
+        //status
+        val status = db.insert(DATABASE_TABLE_NAME, null, contentValue)
+        //close db
+        db.close()
+        return status
+
+    }
 
 }

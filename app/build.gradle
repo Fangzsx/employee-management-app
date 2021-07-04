@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.fangs.employee_management_app"
-        minSdkVersion 21
+        minSdkVersion 29
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -42,4 +42,7 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    debugImplementation 'im.dino:dbinspector:3.4.1@aar'
+
+
 }
