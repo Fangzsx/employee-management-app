@@ -56,6 +56,8 @@ class MainActivity : AppCompatActivity() {
 
             val rvRecords = findViewById<RecyclerView>(R.id.rv_records)
             rvRecords.layoutManager = LinearLayoutManager(this)
+            val itemAdapter = EmployeeAdapter(this,getEmployeeList())
+            rvRecords.adapter = itemAdapter
 
         }
 
