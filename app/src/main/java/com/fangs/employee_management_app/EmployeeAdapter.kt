@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class EmployeeAdapter(private val context : Context, private val employeeList : ArrayList<EmployeeModel>) : RecyclerView.Adapter<EmployeeAdapter.ViewHolder>() {
@@ -31,6 +32,14 @@ class EmployeeAdapter(private val context : Context, private val employeeList : 
         val currentItem = employeeList[position]
         holder.tvName.text = currentItem.name
         holder.tvEmail.text = currentItem.email
+        
+        //edit onclick listener
+        holder.btnEdit.setOnClickListener {
+
+            if(context is MainActivity){
+                context.updateRecord(currentItem)
+            }
+        }
 
 
     }

@@ -49,6 +49,18 @@ class DatabaseHandler(context : Context) : SQLiteOpenHelper(context, DATABASE_NA
 
     }
 
+    fun updateEmployee(employee: EmployeeModel) : Int{
+
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(KEY_NAME, employee.name)
+        contentValues.put(KEY_EMAIL, employee.email)
+        return db.update(DATABASE_TABLE_NAME, contentValues, KEY_ID + "=" + employee.id, null)
+
+
+
+    }
+
     fun viewEmployees() : ArrayList<EmployeeModel> {
         //select table
         val selectQuery = "SELECT * FROM $DATABASE_TABLE_NAME"

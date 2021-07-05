@@ -53,6 +53,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //updating item info
+    fun updateRecord(employee : EmployeeModel){
+        //TODO
+        val databaseHandler = DatabaseHandler(this)
+        databaseHandler.updateEmployee(employee)
+
+
+    }
+
+
+
     private fun showListInRecyclerView(){
 
         val rvRecords = findViewById<RecyclerView>(R.id.rv_records)
