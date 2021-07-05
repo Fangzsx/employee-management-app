@@ -1,9 +1,12 @@
 package com.fangs.employee_management_app
 
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -52,14 +55,24 @@ class MainActivity : AppCompatActivity() {
 
     private fun showListInRecyclerView(){
 
+        val rvRecords = findViewById<RecyclerView>(R.id.rv_records)
+        val tvListIsEmpty = findViewById<TextView>(R.id.tv_list_is_empty)
+
         //check if list is empty
         if(getEmployeeList().size > 0){
 
-            val rvRecords = findViewById<RecyclerView>(R.id.rv_records)
+
+            tvListIsEmpty.visibility = View.GONE
+
+
+
             rvRecords.layoutManager = LinearLayoutManager(this)
             val itemAdapter = EmployeeAdapter(this,getEmployeeList())
             rvRecords.adapter = itemAdapter
 
+        } else {
+            rvRecords.visibility = View.GONE
+            tvListIsEmpty.visibility = View.VISIBLE
         }
 
     }
