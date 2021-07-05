@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/tv_item_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.25"
+        android:text="Name: "
+        android:textSize="17sp"/>
+    <TextView
+        android:id="@+id/tv_item_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.50"
+        android:textSize="17sp"
+        android:text="Email:"/>
+    <ImageButton
+        android:id="@+id/btn_item_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_edit_24"/>
+    <ImageButton
+        android:id="@+id/btn_item_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_delete_24"/>
+
+</LinearLayout>
