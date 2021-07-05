@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,6 +47,20 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(applicationContext, "Name and Email cannot be empty", Toast.LENGTH_LONG).show()
         }
 
+    }
+
+    private fun showListInRecyclerView(){
+
+        //check if list is empty
+        if(getEmployeeList().size > 0){
+
+            val rvRecords = findViewById<RecyclerView>(R.id.rv_records)
+            rvRecords.layoutManager = LinearLayoutManager(this)
+
+        }
 
     }
+
+    private fun getEmployeeList() : ArrayList<EmployeeModel> = DatabaseHandler(this).viewEmployees()
+
 }
