@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
             addRecord()
 
         }
+
+        showListInRecyclerView()
     }
 
     private fun addRecord(){
@@ -46,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         } else{
             Toast.makeText(applicationContext, "Name and Email cannot be empty", Toast.LENGTH_LONG).show()
         }
-
     }
 
     private fun showListInRecyclerView(){
