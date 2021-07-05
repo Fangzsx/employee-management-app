@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun addRecord(){
+    private fun addRecord(){
 
         val name = findViewById<EditText>(R.id.et_main_name).text.toString()
         val email = findViewById<EditText>(R.id.et_main_email).text.toString()

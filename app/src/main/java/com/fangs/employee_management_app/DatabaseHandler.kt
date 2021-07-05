@@ -2,6 +2,8 @@ package com.fangs.employee_management_app
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
+import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
@@ -47,4 +49,42 @@ class DatabaseHandler(context : Context) : SQLiteOpenHelper(context, DATABASE_NA
 
     }
 
+    fun viewEmployees() : ArrayList<EmployeeModel> {
+        //select table
+        val selectQuery = "SELECT * FROM $DATABASE_TABLE_NAME"
+        //create a list
+        val employeeList = ArrayList<EmployeeModel>()
+
+        //open db
+        val db = readableDatabase
+        //get cursor
+        var cursor : Cursor? = null
+
+        //try-catch
+        try {
+            cursor = db.rawQuery(selectQuery, null)
+        }catch (e : SQLException){
+            db.execSQL(selectQuery)
+            return employeeList
+        }
+
+        //fields
+        var id : Int
+        var name : String
+        var email : String
+
+        if(cursor.moveToFirst()){
+            do{
+                id =cursor.getInt(cursor.getColumnIndex(KEY_ID))
+                name = cursor.getString(cursor.getColumnIndex(KEY_NAME))
+                email = cursor.getString(cursor.getColumnIndex(KEY_EMAIL))
+
+                val employee = EmployeeModel(id,name,email)
+                employeeList.add(employee)
+
+            }while (cursor.moveToNext())
+        }
+
+        return employeeList
+    }
 }
