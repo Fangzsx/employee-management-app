@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
     //updating item info
     fun updateRecord(employee : EmployeeModel){
-        //TODO
+        //TODO: update record
         val databaseHandler = DatabaseHandler(this)
         databaseHandler.updateEmployee(employee)
 
