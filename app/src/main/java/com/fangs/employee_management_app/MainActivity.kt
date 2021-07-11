@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
             if(name.isNotEmpty() && email.isNotEmpty()){
 
                 //create a new employee model with updated data
-                val status = databaseHandler.updateEmployee(EmployeeModel(0,name,email))
+                val status = databaseHandler.updateEmployee(EmployeeModel(employee.id,name,email))
                 if(status > -1){
                     Toast.makeText(applicationContext, "Record Updated!", Toast.LENGTH_SHORT).show()
                     showListInRecyclerView()
