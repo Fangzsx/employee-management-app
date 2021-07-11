@@ -1,7 +1,6 @@
 package com.fangs.employee_management_app
 
 import android.app.Dialog
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -59,6 +58,9 @@ class MainActivity : AppCompatActivity() {
         //TODO: update record
         val editDialog = Dialog(this, R.style.Theme_dialog)
         editDialog.setCancelable(false)
+        editDialog.setContentView(R.layout.dialog_update)
+
+        editDialog.show()
 
 
 
