@@ -65,7 +65,8 @@
             android:textStyle="bold"
             android:text="Update"/>
         <TextView
-            android:layout_marginLeft="15dp"
+            android:id="@+id/tv_cancel"
+            android:layout_marginStart="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"

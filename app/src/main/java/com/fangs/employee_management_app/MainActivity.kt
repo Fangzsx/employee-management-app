@@ -1,5 +1,6 @@
 package com.fangs.employee_management_app
 
+import android.app.AlertDialog
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -60,14 +61,35 @@ class MainActivity : AppCompatActivity() {
         editDialog.setCancelable(false)
         editDialog.setContentView(R.layout.dialog_update)
 
+        val tvCancel = editDialog.findViewById<TextView>(R.id.tv_cancel)
+
+        tvCancel.setOnClickListener {
+            editDialog.dismiss()
+        }
+
         editDialog.show()
-
-
-
 
     }
 
     fun deleteRecord(employee : EmployeeModel){
+
+        val alertDialog = AlertDialog.Builder(this)
+        alertDialog.setTitle("Delete Record")
+        alertDialog.setMessage("Are you sure you want to delete this record?")
+        alertDialog.setIcon(android.R.drawable.ic_dialog_alert)
+
+        alertDialog.setNegativeButton("NO") {dialogInterface, which ->
+            dialogInterface.dismiss()
+        }
+
+        alertDialog.setPositiveButton("YES") {dialogInterface, which ->
+            Toast.makeText(applicationContext, "deleted", Toast.LENGTH_SHORT).show()
+            dialogInterface.dismiss()
+
+        }
+        alertDialog.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
 
     }
 
