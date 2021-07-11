@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Employee added", Toast.LENGTH_SHORT).show()
                 findViewById<EditText>(R.id.et_main_name).text.clear()
                 findViewById<EditText>(R.id.et_main_email).text.clear()
+                showListInRecyclerView()
 
             }
         } else{
@@ -124,8 +125,9 @@ class MainActivity : AppCompatActivity() {
 
             val databaseHandler = DatabaseHandler(this)
             val status = databaseHandler.deleteEmployee(EmployeeModel(employee.id, "", ""))
-            if(status > 1){
+            if(status > -1){
                 Toast.makeText(applicationContext, "deleted", Toast.LENGTH_SHORT).show()
+                showListInRecyclerView()
             }
             dialogInterface.dismiss()
 
