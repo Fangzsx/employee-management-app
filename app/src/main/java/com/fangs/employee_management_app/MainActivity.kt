@@ -121,8 +121,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         alertDialog.setPositiveButton("YES") {dialogInterface, which ->
-            Toast.makeText(applicationContext, "deleted", Toast.LENGTH_SHORT).show()
+
+            val databaseHandler = DatabaseHandler(this)
+            val status = databaseHandler.deleteEmployee(EmployeeModel(employee.id, "", ""))
+            if(status > 1){
+                Toast.makeText(applicationContext, "deleted", Toast.LENGTH_SHORT).show()
+            }
             dialogInterface.dismiss()
+
 
         }
         alertDialog.create()
