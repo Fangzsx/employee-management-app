@@ -70,7 +70,31 @@ class MainActivity : AppCompatActivity() {
         etName.setText(employee.name)
         etEmail.setText(employee.email)
 
+        //open db
+        val databaseHandler = DatabaseHandler(this)
+
         tvUpdate.setOnClickListener {
+
+            val name = etName.text.toString()
+            val email = etEmail.text.toString()
+            if(name.isNotEmpty() && email.isNotEmpty()){
+
+                //create a new employee model with updated data
+                val status = databaseHandler.updateEmployee(EmployeeModel(0,name,email))
+                if(status > -1){
+                    Toast.makeText(applicationContext, "Record Updated!", Toast.LENGTH_SHORT).show()
+                    showListInRecyclerView()
+                    //dismiss
+                    editDialog.dismiss()
+                }
+
+            }else {
+                Toast.makeText(applicationContext, "Name and Email cannot be empty", Toast.LENGTH_SHORT).show()
+            }
+
+
+
+
 
 
 
