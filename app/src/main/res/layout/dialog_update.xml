@@ -27,9 +27,11 @@
             android:textSize="20sp"
             android:layout_weight="0.25"/>
         <EditText
+            android:id="@+id/et_edit_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.75"
+            android:importantForAutofill="no"
             android:textSize="18sp"/>
     </LinearLayout>
     <LinearLayout
@@ -46,9 +48,11 @@
             android:textStyle="bold"
             android:layout_weight="0.25"/>
         <EditText
+            android:id="@+id/et_edit_email"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.75"
+            android:importantForAutofill="no"
             android:textSize="18sp"/>
     </LinearLayout>
 
@@ -59,6 +63,7 @@
         android:layout_gravity="end">
 
         <TextView
+            android:id="@+id/tv_update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"

@@ -62,6 +62,20 @@ class MainActivity : AppCompatActivity() {
         editDialog.setContentView(R.layout.dialog_update)
 
         val tvCancel = editDialog.findViewById<TextView>(R.id.tv_cancel)
+        val tvUpdate = editDialog.findViewById<TextView>(R.id.tv_update)
+
+        val etName = editDialog.findViewById<EditText>(R.id.et_edit_name)
+        val etEmail = editDialog.findViewById<EditText>(R.id.et_edit_email)
+
+        etName.setText(employee.name)
+        etEmail.setText(employee.email)
+
+        tvUpdate.setOnClickListener {
+
+
+
+        }
+
 
         tvCancel.setOnClickListener {
             editDialog.dismiss()
