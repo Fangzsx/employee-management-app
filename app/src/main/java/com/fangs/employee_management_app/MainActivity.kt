@@ -1,5 +1,6 @@
 package com.fangs.employee_management_app
 
+import android.app.Dialog
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -54,11 +55,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     //updating item info
-    fun updateRecord(employee : EmployeeModel){
+    fun editRecord(employee : EmployeeModel){
         //TODO: update record
-        val databaseHandler = DatabaseHandler(this)
-        databaseHandler.updateEmployee(employee)
+        val editDialog = Dialog(this, R.style.Theme_dialog)
+        editDialog.setCancelable(false)
 
+
+
+
+    }
+
+    fun deleteRecord(employee : EmployeeModel){
 
     }
 

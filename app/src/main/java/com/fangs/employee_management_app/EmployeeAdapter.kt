@@ -37,7 +37,13 @@ class EmployeeAdapter(private val context : Context, private val employeeList : 
         holder.btnEdit.setOnClickListener {
 
             if(context is MainActivity){
-                context.updateRecord(currentItem)
+                context.editRecord(currentItem)
+            }
+        }
+
+        holder.btnDelete.setOnClickListener {
+            if(context is MainActivity){
+                context.deleteRecord(currentItem)
             }
         }
 
